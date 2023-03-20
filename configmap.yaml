@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: colorhomemsg
+data:
+  COLOR: "BLUE"
+  TEXT: "MSG DO K8S"

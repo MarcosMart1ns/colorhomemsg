@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colorhomemsg
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: colorhomemsg
+  template:
+    metadata:
+      labels:
+        app: colorhomemsg
+    spec:
+      containers:
+        - name: colorhomemsg
+          image: xmartinezzz/colorhomemsg
+          ports:
+            - containerPort: 8080
+          # env:
+          #   - name: COLOR
+          #       valueFrom:
+          #         configMapKeyRef:
+          #           name: cm-colorhomemsg
+          #           key: COLOR
+          #   - name: TEXT
+          #       valueFrom:
+          #         configMapKeyRef:
+          #           name: cm-colorhomemsg
+          #           key: TEXT        
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: colorhomemsg
+spec:
+  selector:
+    app: colorhomemsg
+  ports:
+  - port: 8080
+    targetPort: 8080
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: colorhomemsg
+data:
+  COLOR: "BLUE"
+  TEXT: "MSG DO K8S"
