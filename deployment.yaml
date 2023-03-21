@@ -17,17 +17,9 @@ spec:
           image: xmartinezzz/colorhomemsg
           ports:
             - containerPort: 8080
-          # env:
-          #   - name: COLOR
-          #       valueFrom:
-          #         configMapKeyRef:
-          #           name: cm-colorhomemsg
-          #           key: COLOR
-          #   - name: TEXT
-          #       valueFrom:
-          #         configMapKeyRef:
-          #           name: cm-colorhomemsg
-          #           key: TEXT        
+          envFrom:
+            - configMapRef:
+                name: colorhomemsg-config
 
 ---
 
@@ -47,7 +39,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: colorhomemsg
+  name: colorhomemsg-config
 data:
-  COLOR: "BLUE"
+  COLOR: "'BLUE'"
   TEXT: "MSG DO K8S"
