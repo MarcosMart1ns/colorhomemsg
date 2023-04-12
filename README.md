@@ -1,6 +1,6 @@
 # Color Home Message
-Aplicação criada para praticar conceitos de kubernetes utilizando configmaps para enviar valores
-de configuração para a aplicação
+Aplicação criada para praticar conceitos de Kubernetes e Helm Chats para efetuar o deploy de aplicações 
+em ambientes kubernetes com controle imagens pelo helm
 
 Para executar a imagem docker primeiro faça o build da imagem
 ```dockerfile
