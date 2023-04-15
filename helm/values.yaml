@@ -41,8 +41,8 @@ service:
   port: 8080
 
 configmap:
-  color: "'BLUE'"
-  text: "MSG DO K8S"
+  color: "blue"
+  text: "Mensagem Personalizada Através do Helm Chart"
 
 ingress:
   enabled: false

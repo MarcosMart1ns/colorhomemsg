@@ -18,18 +18,16 @@ public class Message {
                     display: flex;
                     align-content: center;
                     justify-content: center;
+                    background-color: %s;
                 ">
                     <p style="font-size: 40px;">
                         %s
                     </p>
                 </div>
-                <script>
-                    document.getElementsByTagName("body")[0].style.backgroundColor = %s;
-                </script>
                 """
                 .formatted(
-                        message,
-                        backgroundColor
+                        backgroundColor,
+                        message
                 );
     }
 }
